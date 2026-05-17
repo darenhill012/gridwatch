@@ -1,53 +1,45 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1f2e,100:0d1117&height=200&section=header&text=GRIDWATCH&fontSize=80&fontColor=00d4ff&fontAlignY=38&desc=Open%20Source%20Network%20Security%20Platform&descAlignY=60&descColor=8b9ab0&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:101827,100:0d1117&height=210&section=header&text=GRIDWATCH&fontSize=82&fontColor=00D4FF&fontAlignY=36&desc=Network%20Security%20Automation%20Platform%20by%20Syndrax&descAlignY=58&descColor=94A3B8&animation=fadeIn" width="100%" alt="Gridwatch header"/>
 
-<br/>
+<br />
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-00d4ff.svg?style=for-the-badge)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-1a1f2e.svg?style=for-the-badge&logo=python&logoColor=00d4ff)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-1a1f2e.svg?style=for-the-badge&logo=linux&logoColor=00d4ff)]()
-[![Status](https://img.shields.io/badge/Status-Active%20Development-1a1f2e.svg?style=for-the-badge&logo=github&logoColor=00d4ff)]()
-[![Contributors](https://img.shields.io/badge/Contributors-6-1a1f2e.svg?style=for-the-badge&logo=github&logoColor=00d4ff)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-00D4FF?style=for-the-badge)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-101827?style=for-the-badge&logo=python&logoColor=00D4FF)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-101827?style=for-the-badge&logo=linux&logoColor=00D4FF)](#-getting-started)
+[![Status](https://img.shields.io/badge/Status-Active%20Development-101827?style=for-the-badge&logo=github&logoColor=00D4FF)](#-roadmap)
+[![Sponsored by Syndrax](https://img.shields.io/badge/Sponsored%20by-Syndrax-101827?style=for-the-badge&logoColor=00D4FF)](https://www.syndrax.io)
 
-<br/>
+<br />
 
-> **Automated multi-engine network security — threat intelligence, device discovery, RAT detection, and AV scanning. Built by engineers, for everyone.**
+### Automated network visibility, threat intelligence, malware scanning, and RAT detection.
 
-<br/>
+Gridwatch is a modular security platform that helps teams discover devices, monitor network activity, check threat intelligence sources, and generate readable security reports from one lightweight Python tool.
 
-[Features](#-features) &nbsp;•&nbsp; [How It Works](#-how-it-works) &nbsp;•&nbsp; [Dashboard](#-dashboard-preview) &nbsp;•&nbsp; [Getting Started](#-getting-started) &nbsp;•&nbsp; [Team](#-team) &nbsp;•&nbsp; [Roadmap](#-roadmap)
+<br />
 
-</div>
+[Features](#-features) • [Architecture](#-architecture) • [Dashboard](#-dashboard-preview) • [Install](#-getting-started) • [Roadmap](#-roadmap) • [Team](#-team)
 
----
+<br />
 
-## 👥 Team
-
-<div align="center">
-
-| | Name | Role | GitHub |
-|:---:|:---|:---|:---|
-| 🔴 | *To be added* | Engine 1 — Threat Intelligence | — |
-| 🟠 | *To be added* | Engine 2 — Network Scanner | — |
-| 🟡 | *To be added* | Engine 3 — Multi-AV | — |
-| 🟢 | *To be added* | Engine 4 — RAT Watch | — |
-| 🔵 | *To be added* | Dashboard & Reports | — |
-| 🟣 | *To be added* | Integration & DevOps | — |
+**A [Syndrax](https://www.syndrax.io) sponsored project**  
+[syndrax.io/gridwatch](https://www.syndrax.io/gridwatch)
 
 </div>
 
 ---
 
-## 📋 Overview
+## ⚡ Why Gridwatch?
 
-**Gridwatch** is a free, open source network security platform built for nonprofits, small businesses, and community organizations that need real protection without enterprise budgets.
+Most small networks do not have a full security team, SIEM, SOC, or enterprise monitoring stack. Gridwatch is designed to give defenders a practical first layer of visibility:
 
-Four engines run simultaneously in the background — blocking threats, mapping devices, scanning for malware, and hunting for spyware — all with zero manual intervention after setup.
+- See what devices are on the network
+- Pull known malicious IP intelligence
+- Watch active connections for suspicious destinations
+- Run basic multi-engine malware checks
+- Generate clean reports for technical and non-technical audiences
 
-```
-No subscription.  No license fees.  No manual updates.  Just protection.
-```
+> **Goal:** simple setup, useful output, and clear next steps when something looks wrong.
 
 ---
 
@@ -55,30 +47,58 @@ No subscription.  No license fees.  No manual updates.  Just protection.
 
 <table>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
-### 🔴 Engine 1 — Threat Intel
-Pulls live malicious IP lists nightly from **EmergingThreats**, **AbuseIPDB**, and **FireHOL**. Deduplicates into one master blocklist and pushes directly to your firewall automatically.
+### 🔴 Threat Intel Engine
+
+Pulls known-bad IP lists from threat intelligence sources, removes duplicates, and builds one clean blocklist for firewall or review workflows.
+
+**Includes:**
+- EmergingThreats
+- AbuseIPDB
+- FireHOL
+- Nightly update workflow
 
 </td>
-<td width="50%">
+<td width="50%" valign="top">
 
-### 🟠 Engine 2 — Network Scanner
-Maps every device on your subnet by IP, MAC address, open ports, and device type. Flags unknown devices that weren't there yesterday.
+### 🟠 Network Scanner
+
+Discovers devices on your subnet and builds a simple inventory of IP addresses, MAC addresses, ports, and device information.
+
+**Useful for:**
+- Finding unknown devices
+- Daily network snapshots
+- Device inventory tracking
+- Small business audits
 
 </td>
 </tr>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
-### 🟡 Engine 3 — Multi-AV
-Runs multiple open source antivirus engines simultaneously against active files and processes. If one engine misses something, another catches it.
+### 🟡 Multi-AV Scanner
+
+Runs multiple detection checks against active files and processes so one missed result does not become a blind spot.
+
+**Designed for:**
+- Active process review
+- Suspicious file checks
+- Lightweight malware scanning
+- Reportable findings
 
 </td>
-<td width="50%">
+<td width="50%" valign="top">
 
-### 🟢 Engine 4 — RAT Watch
-Monitors every outbound connection in real time. Detects Remote Access Trojans and spyware by catching processes phoning home to unknown IPs.
+### 🟢 RAT Watch
+
+Monitors outbound connections and flags processes communicating with suspicious or unknown destinations.
+
+**Helps detect:**
+- Remote Access Trojans
+- Spyware behavior
+- Unknown outbound traffic
+- Suspicious process activity
 
 </td>
 </tr>
@@ -88,72 +108,74 @@ Monitors every outbound connection in real time. Detects Remote Access Trojans a
 
 ## 🔧 How It Works
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        GRIDWATCH CORE                           │
-│                                                                 │
-│   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
-│   │  Engine 1   │  │  Engine 2   │  │  Engine 3   │            │
-│   │ Threat Intel│  │Net Discovery│  │  Multi-AV   │            │
-│   └──────┬──────┘  └──────┬──────┘  └──────┬──────┘            │
-│          └────────────────┼────────────────┘                    │
-│                           │                                     │
-│                  ┌────────▼────────┐                            │
-│                  │   Engine 4      │                            │
-│                  │   RAT Watch     │                            │
-│                  └────────┬────────┘                            │
-│                           │                                     │
-│          ┌────────────────┼────────────────┐                    │
-│          ▼                ▼                ▼                    │
-│   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
-│   │  Dashboard  │  │   Alerts    │  │  PDF Report │            │
-│   └─────────────┘  └─────────────┘  └─────────────┘            │
-└─────────────────────────────────────────────────────────────────┘
+```text
+┌────────────────────────────────────────────────────────────────────┐
+│                            GRIDWATCH                               │
+│                                                                    │
+│   ┌────────────────┐    ┌────────────────┐    ┌────────────────┐  │
+│   │ Threat Intel   │    │ Network Scan   │    │ Multi-AV Scan  │  │
+│   │ Blocklists     │    │ Device Map     │    │ File Checks    │  │
+│   └───────┬────────┘    └───────┬────────┘    └───────┬────────┘  │
+│           │                     │                     │           │
+│           └─────────────────────┼─────────────────────┘           │
+│                                 │                                 │
+│                         ┌───────▼────────┐                        │
+│                         │   RAT Watch    │                        │
+│                         │ Connections    │                        │
+│                         └───────┬────────┘                        │
+│                                 │                                 │
+│           ┌─────────────────────┼─────────────────────┐           │
+│           ▼                     ▼                     ▼           │
+│   ┌──────────────┐      ┌──────────────┐      ┌──────────────┐    │
+│   │ Dashboard    │      │ Alerts       │      │ PDF Report   │    │
+│   └──────────────┘      └──────────────┘      └──────────────┘    │
+└────────────────────────────────────────────────────────────────────┘
 ```
 
-**Execution flow:**
+### Execution flow
 
-1. `Initialize` — Load config, verify dependencies
-2. `Fetch Threats` — Pull and merge malicious IP lists
-3. `Scan Network` — Discover all devices on subnet
-4. `Analyze Processes` — Cross-reference against blocklist
-5. `AV Scan` — Multi-engine scan on active files
-6. `Output` — Dashboard, alerts, and optional PDF report
+| Step | Stage | What happens |
+|:---:|:---|:---|
+| 1 | Initialize | Loads config and validates dependencies |
+| 2 | Fetch Threats | Pulls and merges malicious IP lists |
+| 3 | Scan Network | Discovers devices on the local subnet |
+| 4 | Analyze Processes | Cross-checks active connections against threat data |
+| 5 | AV Scan | Runs malware checks against selected files/processes |
+| 6 | Output | Generates dashboard results, alerts, and PDF reports |
 
 ---
 
 ## 🗂️ Architecture
 
-```
+```text
 gridwatch/
-│
 ├── gridwatch.py              # Main orchestrator
-├── blocklist.txt             # Generated IP blocklist
-├── discovered_devices.txt    # Live device inventory
+├── blocklist.txt             # Generated malicious IP blocklist
+├── discovered_devices.txt    # Current network inventory
 │
 ├── engines/
-│   ├── threat_intel.py       # Engine 1
-│   ├── network_scan.py       # Engine 2
-│   ├── multi_av.py           # Engine 3
-│   └── rat_watch.py          # Engine 4
+│   ├── threat_intel.py       # Threat intelligence engine
+│   ├── network_scan.py       # Network discovery engine
+│   ├── multi_av.py           # Multi-engine AV scanner
+│   └── rat_watch.py          # Outbound connection monitor
 │
 ├── reports/
-│   └── report_generator.py   # PDF report output
+│   └── report_generator.py   # PDF report generator
 │
 ├── config/
-│   └── settings.yaml         # Configuration
+│   └── settings.yaml         # Runtime configuration
 │
 └── utils/
-    └── helpers.py            # Shared utilities
+    └── helpers.py            # Shared helper functions
 ```
 
 ---
 
 ## 📊 Dashboard Preview
 
-```
+```text
 ╔══════════════════════════════════════════════════════════╗
-║           GRIDWATCH  —  Network Security Monitor         ║
+║              GRIDWATCH — Network Security Monitor        ║
 ╚══════════════════════════════════════════════════════════╝
 
   📡 NETWORK
@@ -162,23 +184,23 @@ gridwatch/
   New Devices              0
   Unknown Devices          0
 
-  🛡️  THREAT INTELLIGENCE
+  🛡️ THREAT INTELLIGENCE
   ─────────────────────────────────────────────────────
   Malicious IPs Blocked    3,275
-  Sources Active           3  (FireHOL · AbuseIPDB · ET)
-  Last Update              2026-05-03  03:00:01
+  Sources Active           FireHOL · AbuseIPDB · EmergingThreats
+  Last Update              2026-05-03 03:00:01
 
   🦠 ANTIVIRUS
   ─────────────────────────────────────────────────────
   Engines Running          ClamAV ✓   YARA ✓
-  Last Scan                2026-05-03  02:45:00
+  Last Scan                2026-05-03 02:45:00
   Threats Found            0
 
   🎯 RAT WATCH
   ─────────────────────────────────────────────────────
   Connections Monitored    156
   Suspicious               0
-  Status                   ✓  All Clear
+  Status                   ✓ All Clear
 
 ══════════════════════════════════════════════════════════
 ```
@@ -187,9 +209,9 @@ gridwatch/
 
 ## 🚨 Alert Example
 
-```
+```text
 ══════════════════════════════════════════════════════════
-  ⚠️  GRIDWATCH SECURITY ALERT  —  HIGH SEVERITY
+  ⚠️  GRIDWATCH SECURITY ALERT — HIGH SEVERITY
 ══════════════════════════════════════════════════════════
 
   PROCESS
@@ -209,16 +231,16 @@ gridwatch/
   Confidence    HIGH
 
   ACTIONS TAKEN
-  ✓  Connection logged
-  ✓  Process flagged
-  ⚠  Manual review recommended
+  ✓ Connection logged
+  ✓ Process flagged
+  ⚠ Manual review recommended
 
   NEXT STEPS
-  1. taskkill /PID 4832 /F
-  2. Quarantine file for analysis
-  3. Run full AV scan
-  4. Check for persistence mechanisms
-  5. Review user activity logs
+  1. Kill or isolate the process
+  2. Quarantine the file for analysis
+  3. Run a full antivirus scan
+  4. Check startup and persistence locations
+  5. Review user and system activity logs
 
 ══════════════════════════════════════════════════════════
 ```
@@ -227,21 +249,19 @@ gridwatch/
 
 ## 📄 Report Generation
 
-Gridwatch generates a professional PDF health report built for **executive handoff** — designed to be handed directly to a nonprofit director or small business owner.
+Gridwatch can generate a professional PDF security report for IT managers, business owners, and technical teams.
 
 **Report includes:**
-- Security score out of 100 with letter grade
-- Executive summary in plain language
-- Full network device inventory
+
+- Security score and letter grade
+- Plain-English executive summary
+- Network device inventory
 - Findings ranked by severity
-- Prioritized action items with fix instructions
+- Recommended fixes and next steps
 
 ```bash
-# Generate a full report
 python gridwatch.py --report
 ```
-
-> PDF generation coming in v2.0
 
 ---
 
@@ -249,35 +269,41 @@ python gridwatch.py --report
 
 ### Prerequisites
 
-- Python 3.8+
-- Administrator or root privileges
-- **Windows:** [Npcap](https://npcap.com/) for ARP scanning
-- **Linux:** `libpcap-dev`
+| Requirement | Notes |
+|:---|:---|
+| Python 3.8+ | Required runtime |
+| Admin/root access | Needed for network scanning features |
+| Npcap | Required on Windows for ARP scanning |
+| libpcap-dev | Required on Linux for packet/network scanning |
 
 ### Install
 
 ```bash
-# Clone the repo
+# Clone the repository
 git clone https://github.com/Gridwatch-OS/gridwatch.git
 cd gridwatch
 
 # Install dependencies
 pip install requests scapy psutil
+```
 
-# Run — Windows (as Administrator)
+### Run
+
+```bash
+# Windows — run terminal as Administrator
 python gridwatch.py
 
-# Run — Linux (as root)
+# Linux — run with root privileges
 sudo python3 gridwatch.py
 ```
 
-### Quick Check
+### Quick checks
 
 ```bash
 # View discovered devices
 cat discovered_devices.txt
 
-# View blocked IPs
+# View generated threat blocklist
 cat blocklist.txt
 ```
 
@@ -287,47 +313,100 @@ cat blocklist.txt
 
 | Phase | Status | Focus |
 |:---|:---:|:---|
-| Phase 1 — Base Model | ✅ Done | Threat intel, network scan, process analysis, terminal output |
-| Phase 2 — Engine Expansion | 🔄 In Progress | AbuseIPDB, EmergingThreats, ClamAV, device fingerprinting |
+| Phase 1 — Base Model | ✅ Complete | Threat intel, network scan, process analysis, terminal output |
+| Phase 2 — Engine Expansion | 🔄 In Progress | AbuseIPDB, EmergingThreats, ClamAV, YARA, device fingerprinting |
 | Phase 3 — Automation | 📅 Planned | Background service, scheduled scans, PDF reports, email alerts |
-| Phase 4 — Enterprise | 🔮 Future | Web dashboard, multi-site, SIEM integration, API layer |
+| Phase 4 — Dashboard | 🔮 Future | Web UI, multi-site monitoring, API layer |
+| Phase 5 — Enterprise Integrations | 🔮 Future | SIEM export, firewall sync, role-based access, audit logs |
+
+---
+
+## 👥 Team
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="220">
+<img src="https://github.com/arthurperch.png" width="90" height="90" style="border-radius:50%" alt="Oleg P"/>
+<br /><br />
+<b><a href="https://www.linkedin.com/in/oleg-perchatkin-b90472161/">Oleg P</a></b>
+<br />
+<sub>Lead Engineer & Infrastructure</sub>
+<br /><br />
+<a href="https://github.com/arthurperch">
+<img src="https://img.shields.io/badge/GitHub-arthurperch-101827?style=flat-square&logo=github&logoColor=00D4FF" alt="GitHub arthurperch"/>
+</a>
+</td>
+<td align="center" width="220">
+<img src="https://github.com/Jackt5.png" width="90" height="90" style="border-radius:50%" alt="Giovanny P"/>
+<br /><br />
+<b><a href="https://www.linkedin.com/in/giovanny-jr-valerio-perdomo-6202a4138/">Giovanny P</a></b>
+<br />
+<sub>Engine Development</sub>
+<br /><br />
+<a href="https://github.com/Jackt5">
+<img src="https://img.shields.io/badge/GitHub-Jackt5-101827?style=flat-square&logo=github&logoColor=00D4FF" alt="GitHub Jackt5"/>
+</a>
+</td>
+<td align="center" width="220">
+<img src="https://github.com/Tia-Henderson.png" width="90" height="90" style="border-radius:50%" alt="Tia H"/>
+<br /><br />
+<b><a href="https://www.linkedin.com/in/tia-henderson-/">Tia H</a></b>
+<br />
+<sub>Security & QA</sub>
+<br /><br />
+<a href="https://github.com/Tia-Henderson">
+<img src="https://img.shields.io/badge/GitHub-Tia--Henderson-101827?style=flat-square&logo=github&logoColor=00D4FF" alt="GitHub Tia-Henderson"/>
+</a>
+</td>
+</tr>
+</table>
+
+</div>
 
 ---
 
 ## 🤝 Contributing
 
-Gridwatch is modular by design. Each contributor owns one engine independently.
+Gridwatch is modular by design. Contributors can improve one engine without needing to rewrite the whole platform.
 
 ```bash
-# 1. Fork the repo
-# 2. Create your branch
+# 1. Fork the repository
+
+# 2. Create a feature branch
 git checkout -b feature/your-engine-improvement
 
-# 3. Commit with a clear message
+# 3. Commit your work with a clear message
 git commit -m "feat(engine-1): add AbuseIPDB source integration"
 
-# 4. Push and open a pull request
+# 4. Push your branch
 git push origin feature/your-engine-improvement
+
+# 5. Open a pull request
 ```
 
-**Guidelines:**
-- Comment your code clearly — others need to build on it
-- Add docstrings to all functions
+### Contribution guidelines
+
+- Keep code readable and well-commented
+- Add docstrings to functions
 - Test on Windows and Linux when possible
-- Update the README if you change functionality
+- Update the README when behavior changes
+- Keep security findings clear, factual, and reproducible
 
 ---
 
 ## 📝 License
 
-MIT License — free to use, modify, and distribute. See [LICENSE](LICENSE) for details.
+Gridwatch is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1f2e,100:0d1117&height=120&section=footer&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:101827,100:0d1117&height=120&section=footer&animation=fadeIn" width="100%" alt="Gridwatch footer"/>
 
-**Built by the Gridwatch Team &nbsp;•&nbsp; Protecting networks, one scan at a time.**
+**Built by the Gridwatch Team**  
+Sponsored by [Syndrax](https://www.syndrax.io) • Protecting networks, one scan at a time.
 
 </div>
